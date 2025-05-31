@@ -1,6 +1,5 @@
 import { FaLink } from "react-icons/fa";
 import { TbSourceCode } from "react-icons/tb";
-import { Link } from "react-router-dom";
 
 const projectsData = [
   {

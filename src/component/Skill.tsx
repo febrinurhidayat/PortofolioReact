@@ -24,7 +24,10 @@ const Skill = () => {
         iconSrc: "https://cdn.worldvectorlogo.com/logos/laravel-2.svg",
         status: "Intermediate",
       },
-      { name: "Python", iconSrc: "/assets/python.svg", status: "Intermediate" },
+      { 
+        name: "Python", 
+        iconSrc: "https://cdn-icons-png.flaticon.com/512/5968/5968350.png", 
+        status: "Intermediate" },
       {
         name: "Bootstrap",
         iconSrc: "https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo-shadow.png",
@@ -84,7 +87,7 @@ const Skill = () => {
     <div className="mt-10 md:mt-20 lg:mt-24 xl:mt-32 2xl:mt-40">
       <div
         id="skills"
-        className="px-5 py-10 md:px-12 md:py-12 text-left text-cyan-50 min-h-[500px] h-screen"
+        className="px-5 py-10 md:px-12 md:py-12 text-left text-cyan-50 min-h-screen"
         style={{ backgroundColor: "#021C1E" }}
       >
         <article data-page="skills" className="mx-auto max-w-screen-lg">
