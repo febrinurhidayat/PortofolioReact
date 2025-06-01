@@ -3,9 +3,11 @@ import { useState } from "react";
 const Skill = () => {
   const [activeTab, setActiveTab] = useState("tech-stack");
 
-  const tabButtonBaseClass = "inline-block px-4 py-3 rounded-lg transition-colors duration-300";
+  const tabButtonBaseClass =
+    "inline-block px-4 py-3 rounded-lg transition-colors duration-300";
   const tabButtonActiveClass = "text-gray-50 bg-cyan-600 bg-opacity-20";
-  const tabButtonInactiveClass = "text-gray-400 hover:text-white hover:bg-gray-700/50";
+  const tabButtonInactiveClass =
+    "text-gray-400 hover:text-white hover:bg-gray-700/50";
 
   const skillsData = {
     techStack: [
@@ -24,18 +26,21 @@ const Skill = () => {
         iconSrc: "https://cdn.worldvectorlogo.com/logos/laravel-2.svg",
         status: "Intermediate",
       },
-      { 
-        name: "Python", 
-        iconSrc: "https://cdn-icons-png.flaticon.com/512/5968/5968350.png", 
-        status: "Intermediate" },
+      {
+        name: "Python",
+        iconSrc: "https://cdn-icons-png.flaticon.com/512/5968/5968350.png",
+        status: "Intermediate",
+      },
       {
         name: "Bootstrap",
-        iconSrc: "https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo-shadow.png",
+        iconSrc:
+          "https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo-shadow.png",
         status: "Proficient",
       },
       {
         name: "Tailwind CSS",
-        iconSrc: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
+        iconSrc:
+          "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
         status: "Proficient",
       },
       {
@@ -62,22 +67,26 @@ const Skill = () => {
       },
       {
         name: "Git",
-        iconSrc: "https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png",
+        iconSrc:
+          "https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png",
         status: "Experienced",
       },
       {
         name: "Visual Studio Code",
-        iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
+        iconSrc:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
         status: "Experienced",
       },
       {
         name: "Figma",
-        iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+        iconSrc:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
         status: "Proficient",
       },
       {
         name: "Postman",
-        iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg",
+        iconSrc:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg",
         status: "Proficient",
       },
     ],
@@ -88,7 +97,7 @@ const Skill = () => {
       <div
         id="skills"
         className="px-5 py-10 md:px-12 md:py-12 text-left text-cyan-50 min-h-screen"
-        style={{ backgroundColor: "#021C1E" }}
+        style={{ backgroundColor: "#222831" }}
       >
         <article data-page="skills" className="mx-auto max-w-screen-lg">
           {" "}

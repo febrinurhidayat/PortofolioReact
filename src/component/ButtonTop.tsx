@@ -24,10 +24,10 @@ const ButtonTop = () => {
     isVisible && (
       <button
         onClick={scrollToTop}
-        className="fixed bottom-5 right-5 z-50 p-3 rounded-full bg-yellow-600 text-white shadow-md hover:bg-green-700 transition duration-300"
+        className="fixed bottom-5 right-5 z-50 p-3 rounded-full bg-cyan-400 text-black shadow-md hover:bg-yellow-400 transition duration-300"
         aria-label="Kembali ke atas"
       >
-        <LuArrowBigUpDash />
+        <LuArrowBigUpDash size={24}/>
       </button>
     )
   );

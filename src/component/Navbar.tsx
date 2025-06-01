@@ -11,7 +11,7 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
 
-      const sections = ["about", "skills", "projects", "contact"];
+      const sections = ["about", "skills", "sertifikat", "projects", "contact"];
       const scrollPosition = window.scrollY + (window.innerHeight / 3); 
 
       let currentSection = "";
@@ -48,7 +48,7 @@ const Navbar = () => {
     setMobileMenuOpen(false);
   };
 
-  const navItems = ["about", "skills", "projects", "contact"];
+  const navItems = ["about", "skills","sertifikat", "projects", "contact"];
 
   const socialIcons = [
     {

@@ -5,6 +5,7 @@ import Project from './component/Project'
 import Contact from './component/Contact'
 import Footer from './component/Footer'
 import ButtonTop from './component/ButtonTop'
+import Sertifikat from './component/Sertifikat'
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <NaNvbar />
       <Hero />
       <Skill />
+      <Sertifikat />
       <Project />
       <Contact/>
       <Footer />

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import FotoHero from '/assets/febri.jpg'
+import { BiChevronDown } from 'react-icons/bi'
 
 const Hero = () => {
   const [typedText, setTypedText] = useState('')
@@ -28,7 +29,7 @@ const Hero = () => {
   return (
     <div
       id="about"
-      className="container h-screen mx-auto flex flex-col-reverse md:flex-row items-center gap-5 justify-center"
+      className="container h-[78vh] mx-auto flex flex-col-reverse md:flex-row items-center gap-5 justify-center"
     >
       {/* Text */}
       <div className="md:p-12 text-center md:text-left">
@@ -53,6 +54,25 @@ const Hero = () => {
           alt="febri"
           className="rounded-full border-4 border-cyan-400 object-cover md:w-60 md:h-60 lg:w-72 lg:h-72"
         />  
+      </div>
+        <div className="absolute right-0 bottom-0 left-0 overflow-hidden">
+          <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 1440 320"
+              className="h-auto w-full origin-bottom transform transition-transform"
+          >
+              <path
+                  fill="#222831"
+                  fillOpacity="1"
+                  d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,250.7C960,235,1056,181,1152,165.3C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+              ></path>
+          </svg>
+      </div>
+      <div className="absolute bottom-17 left-1/2 z-20 -translate-x-1/2 transform animate-pulse">
+          <div className="flex flex-col items-center">
+              <span className="mb-2 text-sm text-white">Scroll</span>
+              <BiChevronDown className="text-white" size={24} />
+          </div>
       </div>
     </div>
   )
