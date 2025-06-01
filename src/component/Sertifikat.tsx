@@ -45,7 +45,7 @@ const Sertifikat = () => {
     },
     {
       id: 6,
-      title: "Microsoft Office",
+      title: "Microsoft",
       description: "",
       imgSrc: "/assets/microsoft.png",
       diperoleh: "14 September 2024",
@@ -104,7 +104,7 @@ const Sertifikat = () => {
           >
             {sertifikat.map((item) => (
               <SwiperSlide key={item.id} className="h-auto">
-                <div className="bg-gray-800 p-5 rounded-lg shadow-lg h-full flex flex-col">
+                <div className="bg-gray-800 p-5 rounded-lg shadow-lg h-full flex flex-col mt-10">
                   <div className="w-full h-48 sm:h-56 mb-4 rounded overflow-hidden">
                     <img
                       src={item.imgSrc}

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import {AnimatedBeamDemo} from './animasi'
+
 
 const Skill = () => {
   const [activeTab, setActiveTab] = useState("tech-stack");
@@ -208,6 +210,7 @@ const Skill = () => {
             </div>
           </section>
         </article>
+      <AnimatedBeamDemo />
       </div>
     </div>
   );

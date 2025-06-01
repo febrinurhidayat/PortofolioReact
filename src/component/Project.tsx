@@ -30,7 +30,7 @@ const projectsData = [
     sourceCode: "#"
   },
   {
-    id: 3,
+    id: 4,
     title: "Kalkulator Nilai Akhir",
     description: "Aplikasi web sederhana untuk menghitung nilai akhir berdasarkan beberapa komponen nilai.",
     imgSrc: "/assets/projek1.png", 
@@ -39,7 +39,7 @@ const projectsData = [
     sourceCode: "#"
   },
   {
-    id: 4,
+    id: 5,
     title: "E-Commerce",
     description: "Website E-Commerce sederhana untuk menjual produk fashion dengan fitur keranjang belanja dibuat untuk memenuhi projek akhir MSIB batc 7.",
     imgSrc: "/assets/projek1.png", 
@@ -48,7 +48,7 @@ const projectsData = [
     sourceCode: "#"
   },
   {
-    id: 5,
+    id: 6,
     title: "Sistem Manajemen Toko",
     description: "Platform untuk menjual produk fashion dengan fitur keranjang belanja.",
     imgSrc: "/assets/projek1.png", 
