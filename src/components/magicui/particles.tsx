@@ -2,10 +2,10 @@
 
 import { cn } from "@/lib/utils";
 import React, {
-  ComponentPropsWithoutRef,
   useEffect,
   useRef,
   useState,
+  type ComponentPropsWithoutRef,
 } from "react";
 
 interface MousePosition {

@@ -134,10 +134,10 @@ const Contact = () => {
                 <div className="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-lg shadow-lg">
                   <div className="h-64 overflow-hidden rounded-xl shadow-md">
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.7638257865465!2d109.08841247476393!3d-7.600661892414239!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e656f825e1d5c83%3A0xf947498cbd4d8cf7!2sFebri%20nur%20hidayat!5e0!3m2!1sid!2sid!4v1748778943447!5m2!1sid!2sid"
+                      src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d323.6438248251505!2d109.09065848289194!3d-7.601186520941747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwMzYnMDQuMiJTIDEwOcKwMDUnMjYuNyJF!5e0!3m2!1sid!2sid!4v1749047770711!5m2!1sid!2sid"
                       width="600"
                       height="450"
-                      style={{ border: 0}}
+                      style={{border:0}}
                       allowFullScreen={true}
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"

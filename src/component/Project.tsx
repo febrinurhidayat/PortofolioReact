@@ -15,9 +15,9 @@ const projectsData = [
     id: 2,
     title: "E-Commerce",
     description: "Website E-Commerce sederhana untuk menjual produk fashion dengan fitur keranjang belanja dibuat untuk memenuhi projek akhir MSIB batc 7.",
-    imgSrc: "/assets/projek1.png", 
+    imgSrc: "/assets/e-commerce.png", 
     techStack: "Laravel, Bootstrap, JavaScript",
-    liveLink: "#", 
+    liveLink: "https://toko.febridev.web.id/", 
     sourceCode: "#"
   },
   {

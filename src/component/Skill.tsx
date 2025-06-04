@@ -1,5 +1,4 @@
 import { useState } from "react";
-import {AnimatedBeamDemo} from './animasi'
 
 
 const Skill = () => {
@@ -210,7 +209,6 @@ const Skill = () => {
             </div>
           </section>
         </article>
-      <AnimatedBeamDemo />
       </div>
     </div>
   );

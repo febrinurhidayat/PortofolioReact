@@ -1,11 +1,12 @@
-import NaNvbar from './component/Navbar'
-import Hero from './component/Hero'
-import Skill from './component/Skill'
-import Project from './component/Project'
-import Contact from './component/Contact'
-import Footer from './component/Footer'
-import ButtonTop from './component/ButtonTop'
-import Sertifikat from './component/Sertifikat'
+import NaNvbar from "./component/Navbar";
+import Hero from "./component/Hero";
+import Skill from "./component/Skill";
+import Project from "./component/Project";
+import Contact from "./component/Contact";
+import Footer from "./component/Footer";
+import ButtonTop from "./component/ButtonTop";
+import Sertifikat from "./component/Sertifikat";
+import Animasi from "./component/Animasi";
 
 const App = () => {
   return (
@@ -15,11 +16,12 @@ const App = () => {
       <Skill />
       <Sertifikat />
       <Project />
-      <Contact/>
+      <Contact />
+      <Animasi/>
       <Footer />
-      <ButtonTop/>
+      <ButtonTop />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

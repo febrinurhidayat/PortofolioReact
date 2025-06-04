@@ -75,7 +75,7 @@ const Sertifikat = () => {
           </div>
         </header>
 
-        {sertifikat.length > 0 ? (
+        {sertifikat && (
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={24}
@@ -126,8 +126,6 @@ const Sertifikat = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-        ) : (
-          <p className="text-center text-gray-400">Belum ada sertifikat untuk ditampilkan.</p>
         )}
       </div>
     </section>
