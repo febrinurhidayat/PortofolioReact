@@ -19,7 +19,7 @@
   transform-origin: 70% 70%;
 }
 
-.sadow {
+.sadowCustom {
   box-shadow: 4px 4px rgb(0, 172, 193);
   transition: transform 0.4s ease, background-color 0.4s ease,    box-shadow 0.2s ease;
   -webkit-transition: transform 0.4s ease, background-color 0.4s ease,;
@@ -27,12 +27,12 @@
   -ms-transition: transform 0.4s ease, background-color 0.4s ease,;
   -o-transition: transform 0.4s ease, background-color 0.4s ease,;
 }
-.sadow:hover {
+.sadowCustom:hover {
   transform: scale(0.95);
   box-shadow: 0 6px 12px #222831;
 }
 
-.sadow:active {
+.sadowCustom:active {
   transform: scale(0.9);
 }
 

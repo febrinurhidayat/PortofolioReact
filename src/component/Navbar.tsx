@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"; 
 import { useState, useEffect } from "react";
 import { FaFacebook, FaGithub, FaInstagram } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -68,10 +69,68 @@ const Navbar = () => {
     },
   ];
 
+  // Animation variants
+  const navVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        type: "tween",
+        stiffness: 100,
+        damping: 10,
+        when: "beforeChildren",
+        staggerChildren: 0.05
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: -10 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "tween",
+        stiffness: 100,
+        damping: 10
+      }
+    }
+  };
+
+  const mobileMenuVariants = {
+    hidden: { 
+      opacity: 0,
+      y: "-100%",
+      transition: {
+        duration: 0.3,
+        ease: [0.16, 0.77, 0.47, 0.97]
+      }
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.4,
+        ease: [0.16, 0.77, 0.47, 0.97],
+        when: "beforeChildren",
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const mobileItemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
+
   return (
     <>
-      <nav
+      <motion.nav
         id="navbar"
+        initial="hidden"
+        animate="visible"
+        variants={navVariants}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
             ? "backdrop-blur-lg bg-black/50 border-b border-cyan-400 py-2 shadow-xl"
@@ -79,23 +138,30 @@ const Navbar = () => {
         }`}
       >
         <div className="container mx-auto px-5 flex justify-between items-center">
-          <a
+          <motion.a
             href="#about"
+            variants={itemVariants}
             className="text-3xl font-extrabold tracking-wide cursor-pointer text-white hover:text-cyan-400 transition-colors duration-300"
             onClick={() => {
               setActiveSection("about"); 
               closeMobileMenu();
             }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             <span className="text-cyan-400">&lt;</span>
             Portofolio
             <span className="text-cyan-400">/&gt;</span>
-          </a>
+          </motion.a>
 
-          <div className="hidden md:flex md:space-x-8 text-white font-medium text-lg">
+          <motion.div 
+            className="hidden md:flex md:space-x-8 text-white font-medium text-lg"
+            variants={navVariants}
+          >
             {navItems.map((item) => (
-              <a
+              <motion.a
                 key={item}
+                variants={itemVariants}
                 href={`#${item}`}
                 onClick={() => {
                   setActiveSection(item); 
@@ -103,44 +169,59 @@ const Navbar = () => {
                 className={`link relative group uppercase text-sm tracking-wider ${
                   activeSection === item ? "text-cyan-400" : "hover:text-cyan-300"
                 } transition-colors duration-300`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 {item.charAt(0).toUpperCase() + item.slice(1)}
-                <span
+                <motion.span
                   className={`absolute -bottom-1 left-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full ${
                     activeSection === item ? "w-full" : "w-0" 
                   }`}
-                ></span>
-              </a>
+                  initial={{ width: 0 }}
+                  animate={{ width: activeSection === item ? "100%" : 0 }}
+                  transition={{ duration: 0.3 }}
+                />
+              </motion.a>
             ))}
-          </div>
+          </motion.div>
 
-          <div className="hidden md:flex space-x-5">
+          <motion.div 
+            className="hidden md:flex space-x-5"
+            variants={navVariants}
+          >
             {socialIcons.map((social) => {
-              const IconComponent = social.icon; // Ambil komponen ikon
+              const IconComponent = social.icon; 
               return (
-                <Link
+                <motion.div
                   key={social.name}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  to={social.url}
-                  title={social.name}
-                  // Atur warna dasar dan hover untuk ikon di sini
-                  className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 group"
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.9 }}
                 >
-                  <IconComponent
-                    // Terapkan styling ukuran dan efek hover
-                    className="w-6 h-6 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
-                  />
-                </Link>
+                  <Link
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    to={social.url}
+                    title={social.name}
+                    className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 group"
+                  >
+                    <IconComponent
+                      className="w-6 h-6 opacity-80 group-hover:opacity-100 transition-all duration-300"
+                    />
+                  </Link>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
 
-          <button
+          <motion.button
             className="md:hidden text-white focus:outline-none"
             onClick={toggleMobileMenu}
             aria-label="Toggle menu"
-            aria-expanded={mobileMenuOpen} 
+            aria-expanded={mobileMenuOpen}
+            variants={itemVariants}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
           >
             <svg
               className="w-6 h-6"
@@ -165,54 +246,71 @@ const Navbar = () => {
                 />
               )}
             </svg>
-          </button>
+          </motion.button>
         </div>
-      </nav>
+      </motion.nav>
 
-      <div
-        className={`fixed inset-0 z-40 bg-black/90 backdrop-blur-lg transition-all duration-300 ease-in-out transform ${
-          mobileMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0" 
-        } pt-20 md:hidden`} 
-      >
-        <div className="container mx-auto px-5 flex flex-col items-center space-y-10">
-          {navItems.map((item) => (
-            <a
-              key={item}
-              href={`#${item}`}
-              onClick={() => {
-                setActiveSection(item);
-                closeMobileMenu();    
-              }}
-              className={`text-2xl font-medium uppercase tracking-wider ${
-                activeSection === item ? "text-cyan-400" : "text-white"
-              } transition-colors duration-300`}
-            >
-              {item.charAt(0).toUpperCase() + item.slice(1)}
-            </a>
-          ))}
-
-          <div className="flex space-x-8 pt-10">
-            {socialIcons.map((social) => {
-              const IconComponent = social.icon;
-              return (
-                <Link
-                  key={social.name}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  to={social.url}
-                  className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 group"
-                  onClick={closeMobileMenu}
-                  title={social.name}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            variants={mobileMenuVariants}
+            className="fixed inset-0 z-40 bg-black/90 backdrop-blur-lg pt-20 md:hidden"
+          >
+            <div className="container mx-auto px-5 flex flex-col items-center space-y-10">
+              {navItems.map((item) => (
+                <motion.a
+                  key={item}
+                  variants={mobileItemVariants}
+                  href={`#${item}`}
+                  onClick={() => {
+                    setActiveSection(item);
+                    closeMobileMenu();    
+                  }}
+                  className={`text-2xl font-medium uppercase tracking-wider ${
+                    activeSection === item ? "text-cyan-400" : "text-white"
+                  } transition-colors duration-300`}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  <IconComponent
-                    className="w-6 h-6 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
-                  />
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      </div>
+                  {item.charAt(0).toUpperCase() + item.slice(1)}
+                </motion.a>
+              ))}
+
+              <motion.div 
+                className="flex space-x-8 pt-10"
+                variants={mobileItemVariants}
+              >
+                {socialIcons.map((social) => {
+                  const IconComponent = social.icon;
+                  return (
+                    <motion.div
+                      key={social.name}
+                      whileHover={{ scale: 1.2 }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      <Link
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        to={social.url}
+                        className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 group"
+                        onClick={closeMobileMenu}
+                        title={social.name}
+                      >
+                        <IconComponent
+                          className="w-6 h-6 opacity-80 group-hover:opacity-100 transition-all duration-300"
+                        />
+                      </Link>
+                    </motion.div>
+                  );
+                })}
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
