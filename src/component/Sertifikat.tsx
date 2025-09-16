@@ -114,7 +114,7 @@ const Sertifikat = () => {
               }}
               className="pb-12 pt-2 md:pb-16" 
             >
-              {sertifikat.map((item, index) => ( 
+              {sertifikat.map((item) => ( 
                 <SwiperSlide key={item.id} className="h-auto self-stretch">
                   <motion.div
                     className="bg-gray-800/80 backdrop-blur-sm p-5 rounded-xl shadow-xl h-full flex flex-col mt-2 sm:mt-0" 
